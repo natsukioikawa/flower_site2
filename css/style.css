@@ -1,0 +1,502 @@
+@charset "UTF-8";
+
+body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+/* header */
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding-left: 30px;
+}
+
+h1 a{
+    color : #fff;
+    transition: 0.5s;
+}
+
+h1 a:hover {
+    color: #eae8e8;
+}
+
+nav {
+    background-color: rgba(17, 101, 41, 0.501);
+    text-align: end;
+    padding-right: 30px;
+    
+}
+
+nav a , .nav2 a{
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: end;
+    width: 300px;
+}
+
+nav li:not(:last-child) {
+    margin-right: 25px;
+    padding-top: 10px;
+}
+
+.insta_icon {
+    width: 40px;
+}
+
+nav li {
+    /*線の基点とするためrelativeを指定*/
+position: relative;
+}
+
+nav li:hover {
+color:#fff;
+}
+
+nav li::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 1px;
+    background:#fff;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+nav li:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+
+.nav2  , .toggle_btn{
+    display: none;
+}
+
+
+
+/* main */
+
+.mainvisuai {
+    background-image: url(/img/mainvisual.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.mainvisual_text {
+    position: absolute;
+    top :50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 72px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.triangle {
+    position: relative;
+}
+
+.triangle::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 10px;
+    right: -25px;
+    /*線の形状*/
+    /* width: 80%;
+    height: 2px; */
+    /* background:#fff; */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    border-width: 6px 0px 6px 10.39px;
+}
+
+main .wrapper {
+    background-image: url(/img/backimg.jpg);
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+    background-position: center;
+    background-size: cover;
+}
+
+.toptext {
+    width: 80%;
+    margin: auto;
+}
+
+.toptext_inner1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 100px 0 50px;
+}
+
+.toptext_inner1 p {
+    width: 45%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.toptext_inner1 img {
+    max-width: 300px;
+    border-radius: 50% 80%;
+    margin-right: 50px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgb(184, 206, 184);
+    margin: auto;
+    box-shadow: 3px 3px 10px 0px rgba(17, 17, 26, 0.18);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.5s;
+}
+
+.btn img {
+    margin-left: 10px;
+}
+
+.btn_text {
+    position: relative;
+    background-color: #ffffffda;
+    padding: 40px 20px;
+    text-align: center;
+    /* height: 150px; */
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgba(17, 101, 41, 0.501);
+    
+}
+
+.wrapper span {
+    font-size: 25px;
+}
+
+section {
+    width: 80%;
+    margin: 150px auto 0;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.menu_list {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 80px 0;
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 60px;
+    margin-bottom: 30px;
+}
+
+.menu_list img {
+    max-width: 100%;
+}
+
+#REVIEW {
+    width: 100%;
+}
+
+#REVIEW li {
+    width: 30%;
+    height: 350px;
+    margin: 0 10px;
+    background-color: #fff;
+}
+
+#REVIEW img {
+    width: 100%;
+}
+
+#NEWS {
+    padding-bottom: 100px;
+}
+
+.news_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+
+
+
+/* footer */
+footer {
+    background-color: rgb(184, 206, 184);
+    color: #fff;
+    padding: 100px 20px 0;
+}
+
+footer .inner {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+footer ul {
+    min-width: 280px;
+}
+
+footer a {
+    color: #fff;
+}
+
+.tel {
+    margin-top: 20px;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    margin-left: 50px;
+    /* margin: 50px auto 100px; */
+}
+
+.map--gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+small {
+    display: block;
+    padding-block: 100px 20px;
+    text-align: center;
+}
+
+
+
+
+/* レスポンシブ */
+@media (max-width:860px) {
+
+nav {
+    display: none;
+}
+
+.toggle_btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.open .toggle_btn {
+    z-index: 30;
+}
+
+  /* ハンバーガーメニュー（閉じている時） */
+.toggle_btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.5s;
+    position: absolute; 
+}
+
+  /* 1本目の線の位置を設定  */
+.toggle_btn span:nth-child(1) {
+    top: 20%;
+}
+  /* 2本目の線の位置を設定  */
+.toggle_btn span:nth-child(2) {
+    top: 50%;
+}
+  /* 3本目の線の位置を設定  */
+.toggle_btn span:nth-child(3) {
+    top: 80%;
+}
+
+
+/* 1本目の線を-45度回転
+transformで線のど真ん中の点を中心に動く
+*/
+.open .toggle_btn span:nth-child(1) {
+    transform: rotate(-135deg);
+    top: 50%;
+    background-color: #fff;
+}
+/*2本目の線を消す*/
+.open .toggle_btn span:nth-child(2) {
+    display: none;
+}
+/*3本目の線を45度回転*/
+.open .toggle_btn span:nth-child(3){
+    transform: rotate(135deg); 
+    top: 50%;
+    background-color: #fff;
+}
+
+header .nav {
+    display: none;
+}
+
+.nav2 {
+    display: block;
+    position: fixed;
+    top: -50%;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    /*動き*/
+    opacity: 0;
+    transition: all 0.5s;
+    line-height: 35px;
+    /* ※ふわっと表示・非表示にする場合 */
+    /* transition: visibility .7s linear, opacity .7s linear; */
+}
+
+.open .nav2 {
+    position:fixed;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    z-index: 20;
+    padding-top: 250px;
+    background-color: rgb(61,119,75,0.95);
+    border-radius: 0 0 0 50%;
+}
+
+.nav2 a {
+    display: inline-block;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+
+
+
+
+
+.nav2 li a{
+    /*線の基点とするためrelativeを指定*/
+position: relative;
+}
+
+.nav2 li a:hover {
+color:#fff;
+}
+
+.nav2 li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 5px;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 1px;
+    background:#fff;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+.nav2 li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+
+
+
+
+
+/* .menu-list {
+    display: block;
+} */
+
+.toptext_inner1 ,.news_text , footer .inner  {
+    flex-direction: column;
+    width: 100%;
+}
+
+.toptext_inner1 p {
+    width: 100%;
+    margin-top: 30px;
+}
+
+iframe {
+    margin-left: 0;
+    margin-top: 30px;
+}
+
+#REVIEW img {
+    height: 250px;
+    object-fit: cover;
+}
+
+
+}
